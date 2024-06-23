@@ -1,0 +1,28 @@
+openapi: 3.0.0
+info:
+  title: test api
+  version: v1
+paths:
+  /test:
+    get:
+      parameters:
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/Cursor'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    Id:
+      type: integer
+      format: int32
+    CreatedAt:
+      type: string
+      format: date-time
+    Cursor:
+      oneOf:
+        - $ref: '#/components/schemas/Id'
+        - $ref: '#/components/schemas/CreatedAt'
