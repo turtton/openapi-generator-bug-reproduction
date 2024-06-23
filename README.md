@@ -6,7 +6,7 @@ This repository is a minimal environment for reproducing bugs encountered in ope
 
 This problem occurs when oneOf is used to represent a tuple.
 
-`api.yaml`
+[`api.yaml`](./api.yaml)
 
 ```yaml
 components:
@@ -23,7 +23,7 @@ components:
         - $ref: '#/components/schemas/CreatedAt'
 ```
 
-`generated7.6.0/api.ts`
+[`generated76/api.ts`](./generated76/api.ts)
 TypeDefinition
 
 ```ts
@@ -43,7 +43,11 @@ if (cursor !== undefined) {
 }
 ```
 
-This bug cursed since 7.1.0(see `generated71/api.ts`), and 7.0.0 generates
+This bug cursed since 7.1.0(see [`generated71/api.ts`](./generated71/api.ts))
+
+7.0.0 generates
+[`generated70/api.ts](./generated70/api.ts)
+
 ```ts
 if (cursor !== undefined) {
 	localVarQueryParameter['cursor'] = cursor;
